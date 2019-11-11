@@ -1,9 +1,14 @@
 package com.thoughtworks.springboottutorial.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity // tells Hibernate to make a table out of this class
 public class Book {
+    @Id // Indicates that field below is the primary key of the current entity
+    private String id;
     private String title;
     private String author;
-    private String id;
 
     public String getTitle() {
         return title;
