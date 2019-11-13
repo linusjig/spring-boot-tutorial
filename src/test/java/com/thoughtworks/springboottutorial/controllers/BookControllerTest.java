@@ -42,6 +42,8 @@ public class BookControllerTest {
         createdBook.setId("id1");
 
         when(bookService.create(refEq(book))).thenReturn(createdBook);
+        // If we override how books get tested for equality in the model, we would not need to use refEq
+        // when(bookService.create(book)).thenReturn(createdBook);
 
 
         mockMvc.perform(post("/books")
